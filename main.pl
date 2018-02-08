@@ -3,19 +3,36 @@ use warnings;
 use diagnostics;
 
 use feature 'say';
-use feature 'switch';
 
 #program to find doi from a text file
-say "This program will find doi string from a text file.\n\n";
+say "This program will find doi string from text files contained within a folder.\n\n";
 
-#code
-my $string = "Abstract [This corrects the article DOI: 10.1371/journal.pone.0163238.].
-Erratum for Consensus Analysis of Whole Transcriptome Profiles from Two Breast Cancer
-Patient Cohorts Reveals Long Non-Coding RNAs Associated with Intrinsic
-Subtype and the Tumour Microenvironment. [PLoS One. 2016]\n";
+#gather file names from the source folder
+my $source = "/Users/yaxar/Downloads/txt_files/*.txt";
+my @list = glob($source);
+my $size = @list;
 
-say $string;
+#prints out the number of files
+say "Total file(s) found: $size"."\n\n";
 
-while ( $string =~ /(\w*[aeiou]{2}\w*)/g ) {
-  say "$1";
+#reads through each file to find the DOI
+foreach (@list) {
+  my $file_name = substr($_, 0);
+  my $file_name2 = substr($_, 34);
+
+  if (open(my $fh, $file_name)) {
+    while (my $row = <$fh>) {
+      my $string = $row;
+
+      if ( $string =~ /\b(10[.][0-9]{4,}(?:[.][0-9]+)*\/(?:(?!["&\'])\S)+)\b/i ) {
+        say "DOI for "."$file_name2"." is: "."$1";
+      } else {
+        #This line is being run multiple times?
+        #say "No DOI found for '$file_name'";
+      }
+    }
+
+  } else {
+    warn "Could not open '$file_name' $!";
+  }
 }
