@@ -18,7 +18,7 @@ say "Total file(s) found: $size"."\n\n";
 #reads through each file to find the DOI
 foreach (@list) {
   my $file_name = substr($_, 0);
-  my $file_name2 = substr($_, 34);
+  my $file_name2 = substr($_, 33);
 
   if (open(my $fh, $file_name)) {
     while (my $row = <$fh>) {

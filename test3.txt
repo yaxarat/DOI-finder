@@ -1,0 +1,14 @@
+This program will find doi string from text files contained within a folder.
+
+
+Total file(s) found: 119
+
+
+DOI for this_should_not_fail.txt is: 10.1016/journal.cmi.201801021
+DOI for this_should_not_fail2.txt is: 10.1038/gim.2017.260.\cb1
+DOI for this_should_not_fail2.txt is: 10.1038/gim.2017.260.\cb1
+DOI for this_should_not_fail2.txt is: 10.1038/gim.2017.260
+DOI for this_should_not_fail2.txt is: 10.1038/gim.2017.260.\cb1
+DOI for this_should_not_fail2.txt is: 10.1038/gim.2017.260.\cb1
+DOI for this_should_not_fail3.txt is: 10.1371/journal.pone.0192818
+DOI for this_should_not_fail3.txt is: 10.1371/journal.pone.0188088.].\cb1
