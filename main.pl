@@ -6,9 +6,10 @@ use feature 'say';
 
 #program to find doi from a text file
 say "This program will find doi string from text files contained within a folder.\n\n";
+say "Please directly enter the absolute path to the directory containing text files to source."
 
 #gather file names from the source folder
-my $source = "/Users/yaxar/Downloads/txt_files/*.txt";
+my $source = "";
 my @list = glob($source);
 my $size = @list;
 
