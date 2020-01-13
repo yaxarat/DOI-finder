@@ -1,5 +1,5 @@
 # DOI Finder
-![DOI](image.png)
+![DOI](images.png)
 
 
 ## Purpose
