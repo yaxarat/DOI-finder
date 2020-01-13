@@ -1,5 +1,5 @@
 # DOI Finder
-![](DOI%20Finder/images.png)
+![DOI](image.png)
 
 
 ## Purpose
